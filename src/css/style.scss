@@ -1,0 +1,188 @@
+@config "./../../tailwind.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Font
+@font-face {
+    font-family: "anironc";
+    src: url(./../resources/dist/fonts/Anironc.ttf);
+}
+
+
+/*#region [Mixin] */
+@mixin card ($shadowColor) {
+    @apply p-6 m-4 shadow-lg #{$shadowColor};
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+@mixin font-anironc {
+    font-family: 'anironc';
+}
+
+@mixin section {
+    @apply text-center mb-6 px-3 md:lg:px-12;
+}
+
+@mixin badge {
+    @apply bg-cyan-300 px-3 py-1 rounded-2xl;
+}
+
+@mixin roundedImage ($borderColor) {
+    @apply rounded-full p-1 w-28 h-28 border-2 #{$borderColor};
+}
+
+/*#endregion*/
+
+/*#region [Global] */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    @apply leading-relaxed;
+}
+
+main {
+    @apply text-black dark:text-white bg-white dark:bg-black
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    width: 4rem;
+    height: 5rem;
+}
+
+.font-anironc {
+    font-family: 'anironc';
+}
+
+.section-title {
+    @apply text-2xl font-medium mb-4 pt-8;
+
+    & span {
+        @apply font-bold;
+    }
+}
+
+.section-description {
+    @apply px-4 text-sm mb-4;
+}
+
+/*#endregion */
+
+/*#region [Header] */
+header {
+    background-image: url("./../resources/dist/img/background.jpg");
+    @apply text-white flex flex-col p-4 md:lg:px-12;
+
+    & nav {
+        @apply flex justify-between;
+
+        & ul {
+            @apply flex flex-row space-x-3;
+        }
+    }
+
+    & h1 {
+        @apply py-64 text-center text-4xl;
+        line-height: 3rem;
+    }
+}
+
+
+
+/*#endregion */
+
+/*#region [Work List] */
+#works {
+    @include section;
+
+    & #works-list {
+        @apply grid sm:grid-cols-1 md:lg:grid-cols-4 md:lg:gap-4;
+
+        & article {
+            @include card ('shadow-green-600');
+            @include font-anironc;
+
+            @apply flex items-center justify-center;
+        }
+    }
+}
+
+/*#endregion*/
+
+/*#region [Order List] */
+#read-order {
+    @include section();
+
+    & #order-list {
+        @apply grid sm:grid-cols-1 md:lg:grid-cols-2;
+
+        & article {
+            @include card ('shadow-cyan-600');
+            @apply md:lg:text-left flex flex-col-reverse md:lg:flex-row items-center my-6;
+
+            & .order-description {
+                @apply me-2 mb-6;
+
+                & p {
+                    @apply my-4;
+                }
+
+                & .badge {
+                    @include badge;
+                }
+            }
+
+            & img {
+                width: 150px;
+                height: 250px;
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+/*#endregion */
+
+/*#region [Art History] */
+#story {
+    @include section;
+    @apply text-left pb-6 mb-0;
+
+    & p {
+        @apply mb-4;
+    }
+
+    & .img-container {
+        @apply relative;
+
+        & img.border-purple {
+            @include roundedImage('border-purple-800');
+            @apply absolute top-0 left-auto ms-4;
+        }
+
+        & img.border-grey {
+            @include roundedImage('border-zinc-800');
+            @apply absolute bottom-0 left-auto;
+        }
+    }
+}
+
+/*#endregion */
+
+/*#region [Footer] */
+footer {
+    @apply flex flex-col items-center p-6 text-white space-y-3;
+    background-color: #1e293b;
+
+    & a {
+        @apply text-red-800;
+    }
+}
+
+/*#endregion */

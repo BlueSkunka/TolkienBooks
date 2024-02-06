@@ -1,0 +1,19 @@
+{
+    "scripts": {
+        "sass:watch": "postcss ./src/css/style.scss -o dist/css/style.css --watch",
+        "css:watch": "postcss ./src/css/style.scss -o dist/css/style.css --watch "
+    },
+    "devDependencies": {
+        "@csstools/postcss-sass": "^5.0.1",
+        "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.24",
+        "postcss-cli": "^10.1.0",
+        "postcss-import": "^15.1.0",
+        "postcss-nested": "^6.0.1",
+        "postcss-nesting": "^11.2.2",
+        "postcss-partial-import": "^4.1.0",
+        "postcss-scss": "^4.0.6",
+        "sass": "^1.63.3",
+        "tailwindcss": "^3.3.2"
+    }
+}
