@@ -13,9 +13,7 @@
 
 /*#region [Mixin] */
 @mixin card ($shadowColor) {
-    @apply p-6 m-4 shadow-lg #{$shadowColor};
-    border-radius: 6px;
-    border: 1px solid black;
+    @apply p-6 m-4 rounded-md shadow-lg #{$shadowColor};
 }
 
 @mixin font-anironc {
