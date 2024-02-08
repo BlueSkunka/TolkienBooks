@@ -31,7 +31,7 @@
 }
 
 @mixin roundedImage ($borderColor) {
-    @apply rounded-full p-1 min-w-28 min-h-28 w-28 h-28 border-2 #{$borderColor};
+    @apply rounded-full p-1 min-w-28 min-h-28 w-28 h-28 border-4 #{$borderColor};
 }
 
 /*#endregion*/
@@ -90,6 +90,14 @@ header {
     & h1 {
         @apply py-64 text-center text-4xl;
         line-height: 3rem;
+    }
+
+    & .toggle-light-mod {
+        @apply dark:flex hidden;
+    }
+
+    & .toggle-dark-mod {
+        @apply dark:hidden;
     }
 }
 
