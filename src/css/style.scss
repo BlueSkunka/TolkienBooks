@@ -17,7 +17,7 @@
 }
 
 @mixin font-anironc {
-    font-family: 'anironc';
+    @apply font-anironc;
 }
 
 @mixin section {
@@ -52,10 +52,6 @@ a {
 .logo {
     width: 4rem;
     height: 5rem;
-}
-
-.font-anironc {
-    font-family: 'anironc';
 }
 
 .section-title {
