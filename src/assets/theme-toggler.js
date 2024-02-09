@@ -34,10 +34,9 @@ function defineBaseThemeMod() {
 function toggleThemeMod() {
     if (themeMod == darkMod) {
         themeMod = lightMod;
-        document.documentElement.classList.remove(darkMod);
     } else {
         themeMod = darkMod;
-        document.documentElement.classList.add(darkMod);
     }
+    document.documentElement.classList.toggle(darkMod);
     localStorage.theme = themeMod;
 }
